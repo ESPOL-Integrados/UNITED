@@ -1,0 +1,20 @@
+C:\Users\user\Documents\Visual Studio 2012\Projects\Inventario__SAV\Datos\bin\Debug\Datos.dll.config
+C:\Users\user\Documents\Visual Studio 2012\Projects\Inventario__SAV\Datos\bin\Debug\Datos.dll
+C:\Users\user\Documents\Visual Studio 2012\Projects\Inventario__SAV\Datos\bin\Debug\Datos.pdb
+C:\Users\user\Documents\Visual Studio 2012\Projects\Inventario__SAV\Datos\bin\Debug\Entity.dll
+C:\Users\user\Documents\Visual Studio 2012\Projects\Inventario__SAV\Datos\bin\Debug\EntityFramework.dll
+C:\Users\user\Documents\Visual Studio 2012\Projects\Inventario__SAV\Datos\bin\Debug\Entity.pdb
+C:\Users\user\Documents\Visual Studio 2012\Projects\Inventario__SAV\Datos\bin\Debug\EntityFramework.xml
+C:\Users\user\Documents\Visual Studio 2012\Projects\Inventario__SAV\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2012\Projects\Inventario__SAV\Datos\obj\Debug\Datos.dll
+C:\Users\user\Documents\Visual Studio 2012\Projects\Inventario__SAV\Datos\obj\Debug\Datos.pdb
+D:\Universidad\2014 I periodo\Sistemas Integrados\Inventario__SAV\Datos\bin\Debug\Datos.dll.config
+D:\Universidad\2014 I periodo\Sistemas Integrados\Inventario__SAV\Datos\bin\Debug\Datos.dll
+D:\Universidad\2014 I periodo\Sistemas Integrados\Inventario__SAV\Datos\bin\Debug\Datos.pdb
+D:\Universidad\2014 I periodo\Sistemas Integrados\Inventario__SAV\Datos\bin\Debug\Entity.dll
+D:\Universidad\2014 I periodo\Sistemas Integrados\Inventario__SAV\Datos\bin\Debug\EntityFramework.dll
+D:\Universidad\2014 I periodo\Sistemas Integrados\Inventario__SAV\Datos\bin\Debug\Entity.pdb
+D:\Universidad\2014 I periodo\Sistemas Integrados\Inventario__SAV\Datos\bin\Debug\EntityFramework.xml
+D:\Universidad\2014 I periodo\Sistemas Integrados\Inventario__SAV\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+D:\Universidad\2014 I periodo\Sistemas Integrados\Inventario__SAV\Datos\obj\Debug\Datos.dll
+D:\Universidad\2014 I periodo\Sistemas Integrados\Inventario__SAV\Datos\obj\Debug\Datos.pdb

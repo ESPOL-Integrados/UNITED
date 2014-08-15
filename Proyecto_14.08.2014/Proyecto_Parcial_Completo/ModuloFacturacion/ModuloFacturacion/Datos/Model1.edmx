@@ -1,0 +1,703 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SAVModelPrueba.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="SAVModelPruebaStoreContainer">
+          <EntitySet Name="CP_CABECERA_COTIZACION" EntityType="SAVModelPrueba.Store.CP_CABECERA_COTIZACION" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CP_CABECERA_DESPACHO" EntityType="SAVModelPrueba.Store.CP_CABECERA_DESPACHO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CP_CABECERA_PEDIDO" EntityType="SAVModelPrueba.Store.CP_CABECERA_PEDIDO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CP_COTIZACION_X_PEDIDO" EntityType="SAVModelPrueba.Store.CP_COTIZACION_X_PEDIDO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CP_DETALLE_COTIZACION" EntityType="SAVModelPrueba.Store.CP_DETALLE_COTIZACION" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CP_DETALLE_DESPACHO" EntityType="SAVModelPrueba.Store.CP_DETALLE_DESPACHO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CP_DETALLE_PEDIDO" EntityType="SAVModelPrueba.Store.CP_DETALLE_PEDIDO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CP_ESTADO" EntityType="SAVModelPrueba.Store.CP_ESTADO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CP_M_PROVEEDOR" EntityType="SAVModelPrueba.Store.CP_M_PROVEEDOR" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CP_ORDEN_COMPRA" EntityType="SAVModelPrueba.Store.CP_ORDEN_COMPRA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CP_ORDEN_COMPRA_DETALLE" EntityType="SAVModelPrueba.Store.CP_ORDEN_COMPRA_DETALLE" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_CP_CABECERA_COTIZACION_CP_ESTADO" Association="SAVModelPrueba.Store.FK_CP_CABECERA_COTIZACION_CP_ESTADO">
+            <End Role="CP_ESTADO" EntitySet="CP_ESTADO" />
+            <End Role="CP_CABECERA_COTIZACION" EntitySet="CP_CABECERA_COTIZACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CP_COTIZACION_X_PEDIDO_CP_CABECERA_COTIZACION" Association="SAVModelPrueba.Store.FK_CP_COTIZACION_X_PEDIDO_CP_CABECERA_COTIZACION">
+            <End Role="CP_CABECERA_COTIZACION" EntitySet="CP_CABECERA_COTIZACION" />
+            <End Role="CP_COTIZACION_X_PEDIDO" EntitySet="CP_COTIZACION_X_PEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CP_COTIZACION_X_PEDIDO_CP_CABECERA_PEDIDO" Association="SAVModelPrueba.Store.FK_CP_COTIZACION_X_PEDIDO_CP_CABECERA_PEDIDO">
+            <End Role="CP_CABECERA_PEDIDO" EntitySet="CP_CABECERA_PEDIDO" />
+            <End Role="CP_COTIZACION_X_PEDIDO" EntitySet="CP_COTIZACION_X_PEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CP_DETALLE_COTIZACION_CP_CABECERA_COTIZACION" Association="SAVModelPrueba.Store.FK_CP_DETALLE_COTIZACION_CP_CABECERA_COTIZACION">
+            <End Role="CP_CABECERA_COTIZACION" EntitySet="CP_CABECERA_COTIZACION" />
+            <End Role="CP_DETALLE_COTIZACION" EntitySet="CP_DETALLE_COTIZACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CP_DETALLE_DESPACHO_CP_CABECERA_DESPACHO" Association="SAVModelPrueba.Store.FK_CP_DETALLE_DESPACHO_CP_CABECERA_DESPACHO">
+            <End Role="CP_CABECERA_DESPACHO" EntitySet="CP_CABECERA_DESPACHO" />
+            <End Role="CP_DETALLE_DESPACHO" EntitySet="CP_DETALLE_DESPACHO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CP_DETALLE_PEDIDO_CP_CABECERA_PEDIDO" Association="SAVModelPrueba.Store.FK_CP_DETALLE_PEDIDO_CP_CABECERA_PEDIDO">
+            <End Role="CP_CABECERA_PEDIDO" EntitySet="CP_CABECERA_PEDIDO" />
+            <End Role="CP_DETALLE_PEDIDO" EntitySet="CP_DETALLE_PEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CP_ORDEN_COMPRA_CP_CABECERA_COTIZACION" Association="SAVModelPrueba.Store.FK_CP_ORDEN_COMPRA_CP_CABECERA_COTIZACION">
+            <End Role="CP_CABECERA_COTIZACION" EntitySet="CP_CABECERA_COTIZACION" />
+            <End Role="CP_ORDEN_COMPRA" EntitySet="CP_ORDEN_COMPRA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CP_ORDEN_COMPRA_DETALLE_CP_ORDEN_COMPRA" Association="SAVModelPrueba.Store.FK_CP_ORDEN_COMPRA_DETALLE_CP_ORDEN_COMPRA">
+            <End Role="CP_ORDEN_COMPRA" EntitySet="CP_ORDEN_COMPRA" />
+            <End Role="CP_ORDEN_COMPRA_DETALLE" EntitySet="CP_ORDEN_COMPRA_DETALLE" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CP_CABECERA_COTIZACION">
+          <Key>
+            <PropertyRef Name="numero" />
+          </Key>
+          <Property Name="numero" Type="numeric" Nullable="false" Precision="4" />
+          <Property Name="id_provedor" Type="numeric" Precision="4" />
+          <Property Name="id_user_aprovacion" Type="numeric" Precision="4" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="cod_estado" Type="numeric" Precision="4" />
+        </EntityType>
+        <EntityType Name="CP_CABECERA_DESPACHO">
+          <Key>
+            <PropertyRef Name="numero" />
+          </Key>
+          <Property Name="numero" Type="numeric" Nullable="false" Precision="4" />
+          <Property Name="fecha_despacho" Type="date" />
+          <Property Name="fecha_entrega" Type="date" />
+          <Property Name="numero_orden_compra" Type="numeric" Precision="4" />
+          <Property Name="id_proveedor" Type="numeric" Precision="4" />
+          <Property Name="id_estado" Type="numeric" Precision="4" />
+        </EntityType>
+        <EntityType Name="CP_CABECERA_PEDIDO">
+          <Key>
+            <PropertyRef Name="numero" />
+          </Key>
+          <Property Name="numero" Type="numeric" Nullable="false" Precision="4" />
+          <Property Name="id_responsable" Type="numeric" Precision="4" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="Observaciones" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CP_COTIZACION_X_PEDIDO">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="numeric" Nullable="false" Precision="4" />
+          <Property Name="numero_pedido" Type="numeric" Nullable="false" Precision="4" />
+          <Property Name="numero_cotizacion" Type="numeric" Nullable="false" Precision="4" />
+        </EntityType>
+        <EntityType Name="CP_DETALLE_COTIZACION">
+          <Key>
+            <PropertyRef Name="numero" />
+            <PropertyRef Name="linea" />
+          </Key>
+          <Property Name="numero" Type="numeric" Nullable="false" Precision="4" />
+          <Property Name="linea" Type="numeric" Nullable="false" Precision="4" />
+          <Property Name="cantidad" Type="numeric" Precision="4" />
+          <Property Name="id_producto" Type="numeric" Precision="4" />
+          <Property Name="costo_unitario" Type="numeric" Precision="4" Scale="2" />
+        </EntityType>
+        <EntityType Name="CP_DETALLE_DESPACHO">
+          <Key>
+            <PropertyRef Name="numero" />
+            <PropertyRef Name="linea" />
+          </Key>
+          <Property Name="numero" Type="numeric" Nullable="false" Precision="4" />
+          <Property Name="linea" Type="numeric" Nullable="false" Precision="4" />
+          <Property Name="cantidad" Type="numeric" Precision="4" />
+          <Property Name="id_producto" Type="numeric" Precision="4" />
+        </EntityType>
+        <EntityType Name="CP_DETALLE_PEDIDO">
+          <Key>
+            <PropertyRef Name="numero" />
+            <PropertyRef Name="linea" />
+          </Key>
+          <Property Name="numero" Type="numeric" Nullable="false" Precision="4" />
+          <Property Name="linea" Type="numeric" Nullable="false" Precision="4" />
+          <Property Name="cantidad" Type="numeric" Precision="4" />
+          <Property Name="id_producto" Type="numeric" Precision="4" />
+          <Property Name="costo_unitario" Type="numeric" Precision="4" Scale="2" />
+        </EntityType>
+        <EntityType Name="CP_ESTADO">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="numeric" Nullable="false" Precision="4" />
+          <Property Name="descripcion" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="CP_M_PROVEEDOR">
+          <Key>
+            <PropertyRef Name="Codigo_Proveedor" />
+          </Key>
+          <Property Name="Codigo_Proveedor" Type="numeric" Nullable="false" Precision="4" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="razonSocial" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" />
+          <Property Name="direccion" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_ingreso" Type="date" />
+          <Property Name="responsable_legal" Type="varchar" MaxLength="50" />
+          <Property Name="contabilidad" Type="bit" />
+          <Property Name="ruc" Type="varchar" MaxLength="13" />
+          <Property Name="cedula_pass" Type="varchar" MaxLength="10" />
+          <Property Name="id_tipo_producto" Type="numeric" Precision="4" />
+        </EntityType>
+        <EntityType Name="CP_ORDEN_COMPRA">
+          <Key>
+            <PropertyRef Name="numero" />
+          </Key>
+          <Property Name="numero" Type="numeric" Nullable="false" Precision="4" />
+          <Property Name="fecha_generacion" Type="date" />
+          <Property Name="fecha_entrega" Type="date" />
+          <Property Name="id_responsable" Type="numeric" Precision="4" />
+          <Property Name="fecha_aprovacion" Type="date" />
+          <Property Name="numero_cotizacion" Type="numeric" Precision="4" />
+          <Property Name="subtoral" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="iva" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="total" Type="numeric" Precision="4" Scale="2" />
+        </EntityType>
+        <EntityType Name="CP_ORDEN_COMPRA_DETALLE">
+          <Key>
+            <PropertyRef Name="numero" />
+            <PropertyRef Name="linea" />
+          </Key>
+          <Property Name="numero" Type="numeric" Nullable="false" Precision="4" />
+          <Property Name="linea" Type="numeric" Nullable="false" Precision="4" />
+          <Property Name="cantidad" Type="numeric" Precision="4" />
+          <Property Name="id_producto" Type="numeric" Precision="4" />
+          <Property Name="costo_unitario" Type="numeric" Precision="4" />
+          <Property Name="subtotal" Type="numeric" Precision="4" Scale="2" />
+        </EntityType>
+        <Association Name="FK_CP_CABECERA_COTIZACION_CP_ESTADO">
+          <End Role="CP_ESTADO" Type="SAVModelPrueba.Store.CP_ESTADO" Multiplicity="0..1" />
+          <End Role="CP_CABECERA_COTIZACION" Type="SAVModelPrueba.Store.CP_CABECERA_COTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CP_ESTADO">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="CP_CABECERA_COTIZACION">
+              <PropertyRef Name="cod_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CP_COTIZACION_X_PEDIDO_CP_CABECERA_COTIZACION">
+          <End Role="CP_CABECERA_COTIZACION" Type="SAVModelPrueba.Store.CP_CABECERA_COTIZACION" Multiplicity="1" />
+          <End Role="CP_COTIZACION_X_PEDIDO" Type="SAVModelPrueba.Store.CP_COTIZACION_X_PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CP_CABECERA_COTIZACION">
+              <PropertyRef Name="numero" />
+            </Principal>
+            <Dependent Role="CP_COTIZACION_X_PEDIDO">
+              <PropertyRef Name="numero_cotizacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CP_COTIZACION_X_PEDIDO_CP_CABECERA_PEDIDO">
+          <End Role="CP_CABECERA_PEDIDO" Type="SAVModelPrueba.Store.CP_CABECERA_PEDIDO" Multiplicity="1" />
+          <End Role="CP_COTIZACION_X_PEDIDO" Type="SAVModelPrueba.Store.CP_COTIZACION_X_PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CP_CABECERA_PEDIDO">
+              <PropertyRef Name="numero" />
+            </Principal>
+            <Dependent Role="CP_COTIZACION_X_PEDIDO">
+              <PropertyRef Name="numero_pedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CP_DETALLE_COTIZACION_CP_CABECERA_COTIZACION">
+          <End Role="CP_CABECERA_COTIZACION" Type="SAVModelPrueba.Store.CP_CABECERA_COTIZACION" Multiplicity="1" />
+          <End Role="CP_DETALLE_COTIZACION" Type="SAVModelPrueba.Store.CP_DETALLE_COTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CP_CABECERA_COTIZACION">
+              <PropertyRef Name="numero" />
+            </Principal>
+            <Dependent Role="CP_DETALLE_COTIZACION">
+              <PropertyRef Name="numero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CP_DETALLE_DESPACHO_CP_CABECERA_DESPACHO">
+          <End Role="CP_CABECERA_DESPACHO" Type="SAVModelPrueba.Store.CP_CABECERA_DESPACHO" Multiplicity="1" />
+          <End Role="CP_DETALLE_DESPACHO" Type="SAVModelPrueba.Store.CP_DETALLE_DESPACHO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CP_CABECERA_DESPACHO">
+              <PropertyRef Name="numero" />
+            </Principal>
+            <Dependent Role="CP_DETALLE_DESPACHO">
+              <PropertyRef Name="numero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CP_DETALLE_PEDIDO_CP_CABECERA_PEDIDO">
+          <End Role="CP_CABECERA_PEDIDO" Type="SAVModelPrueba.Store.CP_CABECERA_PEDIDO" Multiplicity="1" />
+          <End Role="CP_DETALLE_PEDIDO" Type="SAVModelPrueba.Store.CP_DETALLE_PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CP_CABECERA_PEDIDO">
+              <PropertyRef Name="numero" />
+            </Principal>
+            <Dependent Role="CP_DETALLE_PEDIDO">
+              <PropertyRef Name="numero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CP_ORDEN_COMPRA_CP_CABECERA_COTIZACION">
+          <End Role="CP_CABECERA_COTIZACION" Type="SAVModelPrueba.Store.CP_CABECERA_COTIZACION" Multiplicity="0..1" />
+          <End Role="CP_ORDEN_COMPRA" Type="SAVModelPrueba.Store.CP_ORDEN_COMPRA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CP_CABECERA_COTIZACION">
+              <PropertyRef Name="numero" />
+            </Principal>
+            <Dependent Role="CP_ORDEN_COMPRA">
+              <PropertyRef Name="numero_cotizacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CP_ORDEN_COMPRA_DETALLE_CP_ORDEN_COMPRA">
+          <End Role="CP_ORDEN_COMPRA" Type="SAVModelPrueba.Store.CP_ORDEN_COMPRA" Multiplicity="1" />
+          <End Role="CP_ORDEN_COMPRA_DETALLE" Type="SAVModelPrueba.Store.CP_ORDEN_COMPRA_DETALLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CP_ORDEN_COMPRA">
+              <PropertyRef Name="numero" />
+            </Principal>
+            <Dependent Role="CP_ORDEN_COMPRA_DETALLE">
+              <PropertyRef Name="numero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SAVModelPrueba" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SAVEntities1" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="CP_CABECERA_COTIZACION" EntityType="SAVModelPrueba.CP_CABECERA_COTIZACION" />
+          <EntitySet Name="CP_CABECERA_DESPACHO" EntityType="SAVModelPrueba.CP_CABECERA_DESPACHO" />
+          <EntitySet Name="CP_CABECERA_PEDIDO" EntityType="SAVModelPrueba.CP_CABECERA_PEDIDO" />
+          <EntitySet Name="CP_COTIZACION_X_PEDIDO" EntityType="SAVModelPrueba.CP_COTIZACION_X_PEDIDO" />
+          <EntitySet Name="CP_DETALLE_COTIZACION" EntityType="SAVModelPrueba.CP_DETALLE_COTIZACION" />
+          <EntitySet Name="CP_DETALLE_DESPACHO" EntityType="SAVModelPrueba.CP_DETALLE_DESPACHO" />
+          <EntitySet Name="CP_DETALLE_PEDIDO" EntityType="SAVModelPrueba.CP_DETALLE_PEDIDO" />
+          <EntitySet Name="CP_ESTADO" EntityType="SAVModelPrueba.CP_ESTADO" />
+          <EntitySet Name="CP_M_PROVEEDOR" EntityType="SAVModelPrueba.CP_M_PROVEEDOR" />
+          <EntitySet Name="CP_ORDEN_COMPRA" EntityType="SAVModelPrueba.CP_ORDEN_COMPRA" />
+          <EntitySet Name="CP_ORDEN_COMPRA_DETALLE" EntityType="SAVModelPrueba.CP_ORDEN_COMPRA_DETALLE" />
+          <AssociationSet Name="FK_CP_CABECERA_COTIZACION_CP_ESTADO" Association="SAVModelPrueba.FK_CP_CABECERA_COTIZACION_CP_ESTADO">
+            <End Role="CP_ESTADO" EntitySet="CP_ESTADO" />
+            <End Role="CP_CABECERA_COTIZACION" EntitySet="CP_CABECERA_COTIZACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CP_COTIZACION_X_PEDIDO_CP_CABECERA_COTIZACION" Association="SAVModelPrueba.FK_CP_COTIZACION_X_PEDIDO_CP_CABECERA_COTIZACION">
+            <End Role="CP_CABECERA_COTIZACION" EntitySet="CP_CABECERA_COTIZACION" />
+            <End Role="CP_COTIZACION_X_PEDIDO" EntitySet="CP_COTIZACION_X_PEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CP_DETALLE_COTIZACION_CP_CABECERA_COTIZACION" Association="SAVModelPrueba.FK_CP_DETALLE_COTIZACION_CP_CABECERA_COTIZACION">
+            <End Role="CP_CABECERA_COTIZACION" EntitySet="CP_CABECERA_COTIZACION" />
+            <End Role="CP_DETALLE_COTIZACION" EntitySet="CP_DETALLE_COTIZACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CP_ORDEN_COMPRA_CP_CABECERA_COTIZACION" Association="SAVModelPrueba.FK_CP_ORDEN_COMPRA_CP_CABECERA_COTIZACION">
+            <End Role="CP_CABECERA_COTIZACION" EntitySet="CP_CABECERA_COTIZACION" />
+            <End Role="CP_ORDEN_COMPRA" EntitySet="CP_ORDEN_COMPRA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CP_DETALLE_DESPACHO_CP_CABECERA_DESPACHO" Association="SAVModelPrueba.FK_CP_DETALLE_DESPACHO_CP_CABECERA_DESPACHO">
+            <End Role="CP_CABECERA_DESPACHO" EntitySet="CP_CABECERA_DESPACHO" />
+            <End Role="CP_DETALLE_DESPACHO" EntitySet="CP_DETALLE_DESPACHO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CP_COTIZACION_X_PEDIDO_CP_CABECERA_PEDIDO" Association="SAVModelPrueba.FK_CP_COTIZACION_X_PEDIDO_CP_CABECERA_PEDIDO">
+            <End Role="CP_CABECERA_PEDIDO" EntitySet="CP_CABECERA_PEDIDO" />
+            <End Role="CP_COTIZACION_X_PEDIDO" EntitySet="CP_COTIZACION_X_PEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CP_DETALLE_PEDIDO_CP_CABECERA_PEDIDO" Association="SAVModelPrueba.FK_CP_DETALLE_PEDIDO_CP_CABECERA_PEDIDO">
+            <End Role="CP_CABECERA_PEDIDO" EntitySet="CP_CABECERA_PEDIDO" />
+            <End Role="CP_DETALLE_PEDIDO" EntitySet="CP_DETALLE_PEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CP_ORDEN_COMPRA_DETALLE_CP_ORDEN_COMPRA" Association="SAVModelPrueba.FK_CP_ORDEN_COMPRA_DETALLE_CP_ORDEN_COMPRA">
+            <End Role="CP_ORDEN_COMPRA" EntitySet="CP_ORDEN_COMPRA" />
+            <End Role="CP_ORDEN_COMPRA_DETALLE" EntitySet="CP_ORDEN_COMPRA_DETALLE" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CP_CABECERA_COTIZACION">
+          <Key>
+            <PropertyRef Name="numero" />
+          </Key>
+          <Property Name="numero" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <Property Name="id_provedor" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="id_user_aprovacion" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="cod_estado" Type="Decimal" Precision="4" Scale="0" />
+          <NavigationProperty Name="CP_ESTADO" Relationship="SAVModelPrueba.FK_CP_CABECERA_COTIZACION_CP_ESTADO" FromRole="CP_CABECERA_COTIZACION" ToRole="CP_ESTADO" />
+          <NavigationProperty Name="CP_COTIZACION_X_PEDIDO" Relationship="SAVModelPrueba.FK_CP_COTIZACION_X_PEDIDO_CP_CABECERA_COTIZACION" FromRole="CP_CABECERA_COTIZACION" ToRole="CP_COTIZACION_X_PEDIDO" />
+          <NavigationProperty Name="CP_DETALLE_COTIZACION" Relationship="SAVModelPrueba.FK_CP_DETALLE_COTIZACION_CP_CABECERA_COTIZACION" FromRole="CP_CABECERA_COTIZACION" ToRole="CP_DETALLE_COTIZACION" />
+          <NavigationProperty Name="CP_ORDEN_COMPRA" Relationship="SAVModelPrueba.FK_CP_ORDEN_COMPRA_CP_CABECERA_COTIZACION" FromRole="CP_CABECERA_COTIZACION" ToRole="CP_ORDEN_COMPRA" />
+        </EntityType>
+        <EntityType Name="CP_CABECERA_DESPACHO">
+          <Key>
+            <PropertyRef Name="numero" />
+          </Key>
+          <Property Name="numero" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <Property Name="fecha_despacho" Type="DateTime" Precision="0" />
+          <Property Name="fecha_entrega" Type="DateTime" Precision="0" />
+          <Property Name="numero_orden_compra" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="id_proveedor" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="id_estado" Type="Decimal" Precision="4" Scale="0" />
+          <NavigationProperty Name="CP_DETALLE_DESPACHO" Relationship="SAVModelPrueba.FK_CP_DETALLE_DESPACHO_CP_CABECERA_DESPACHO" FromRole="CP_CABECERA_DESPACHO" ToRole="CP_DETALLE_DESPACHO" />
+        </EntityType>
+        <EntityType Name="CP_CABECERA_PEDIDO">
+          <Key>
+            <PropertyRef Name="numero" />
+          </Key>
+          <Property Name="numero" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <Property Name="id_responsable" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="Observaciones" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="CP_COTIZACION_X_PEDIDO" Relationship="SAVModelPrueba.FK_CP_COTIZACION_X_PEDIDO_CP_CABECERA_PEDIDO" FromRole="CP_CABECERA_PEDIDO" ToRole="CP_COTIZACION_X_PEDIDO" />
+          <NavigationProperty Name="CP_DETALLE_PEDIDO" Relationship="SAVModelPrueba.FK_CP_DETALLE_PEDIDO_CP_CABECERA_PEDIDO" FromRole="CP_CABECERA_PEDIDO" ToRole="CP_DETALLE_PEDIDO" />
+        </EntityType>
+        <EntityType Name="CP_COTIZACION_X_PEDIDO">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <Property Name="numero_pedido" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <Property Name="numero_cotizacion" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <NavigationProperty Name="CP_CABECERA_COTIZACION" Relationship="SAVModelPrueba.FK_CP_COTIZACION_X_PEDIDO_CP_CABECERA_COTIZACION" FromRole="CP_COTIZACION_X_PEDIDO" ToRole="CP_CABECERA_COTIZACION" />
+          <NavigationProperty Name="CP_CABECERA_PEDIDO" Relationship="SAVModelPrueba.FK_CP_COTIZACION_X_PEDIDO_CP_CABECERA_PEDIDO" FromRole="CP_COTIZACION_X_PEDIDO" ToRole="CP_CABECERA_PEDIDO" />
+        </EntityType>
+        <EntityType Name="CP_DETALLE_COTIZACION">
+          <Key>
+            <PropertyRef Name="numero" />
+            <PropertyRef Name="linea" />
+          </Key>
+          <Property Name="numero" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <Property Name="linea" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <Property Name="cantidad" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="id_producto" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="costo_unitario" Type="Decimal" Precision="4" Scale="2" />
+          <NavigationProperty Name="CP_CABECERA_COTIZACION" Relationship="SAVModelPrueba.FK_CP_DETALLE_COTIZACION_CP_CABECERA_COTIZACION" FromRole="CP_DETALLE_COTIZACION" ToRole="CP_CABECERA_COTIZACION" />
+        </EntityType>
+        <EntityType Name="CP_DETALLE_DESPACHO">
+          <Key>
+            <PropertyRef Name="numero" />
+            <PropertyRef Name="linea" />
+          </Key>
+          <Property Name="numero" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <Property Name="linea" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <Property Name="cantidad" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="id_producto" Type="Decimal" Precision="4" Scale="0" />
+          <NavigationProperty Name="CP_CABECERA_DESPACHO" Relationship="SAVModelPrueba.FK_CP_DETALLE_DESPACHO_CP_CABECERA_DESPACHO" FromRole="CP_DETALLE_DESPACHO" ToRole="CP_CABECERA_DESPACHO" />
+        </EntityType>
+        <EntityType Name="CP_DETALLE_PEDIDO">
+          <Key>
+            <PropertyRef Name="numero" />
+            <PropertyRef Name="linea" />
+          </Key>
+          <Property Name="numero" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <Property Name="linea" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <Property Name="cantidad" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="id_producto" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="costo_unitario" Type="Decimal" Precision="4" Scale="2" />
+          <NavigationProperty Name="CP_CABECERA_PEDIDO" Relationship="SAVModelPrueba.FK_CP_DETALLE_PEDIDO_CP_CABECERA_PEDIDO" FromRole="CP_DETALLE_PEDIDO" ToRole="CP_CABECERA_PEDIDO" />
+        </EntityType>
+        <EntityType Name="CP_ESTADO">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <Property Name="descripcion" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="CP_CABECERA_COTIZACION" Relationship="SAVModelPrueba.FK_CP_CABECERA_COTIZACION_CP_ESTADO" FromRole="CP_ESTADO" ToRole="CP_CABECERA_COTIZACION" />
+        </EntityType>
+        <EntityType Name="CP_M_PROVEEDOR">
+          <Key>
+            <PropertyRef Name="Codigo_Proveedor" />
+          </Key>
+          <Property Name="Codigo_Proveedor" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="razonSocial" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="telefono" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="direccion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="fecha_ingreso" Type="DateTime" Precision="0" />
+          <Property Name="responsable_legal" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="contabilidad" Type="Boolean" />
+          <Property Name="ruc" Type="String" MaxLength="13" Unicode="false" FixedLength="false" />
+          <Property Name="cedula_pass" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="id_tipo_producto" Type="Decimal" Precision="4" Scale="0" />
+        </EntityType>
+        <EntityType Name="CP_ORDEN_COMPRA">
+          <Key>
+            <PropertyRef Name="numero" />
+          </Key>
+          <Property Name="numero" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <Property Name="fecha_generacion" Type="DateTime" Precision="0" />
+          <Property Name="fecha_entrega" Type="DateTime" Precision="0" />
+          <Property Name="id_responsable" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="fecha_aprovacion" Type="DateTime" Precision="0" />
+          <Property Name="numero_cotizacion" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="subtoral" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="iva" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="total" Type="Decimal" Precision="4" Scale="2" />
+          <NavigationProperty Name="CP_CABECERA_COTIZACION" Relationship="SAVModelPrueba.FK_CP_ORDEN_COMPRA_CP_CABECERA_COTIZACION" FromRole="CP_ORDEN_COMPRA" ToRole="CP_CABECERA_COTIZACION" />
+          <NavigationProperty Name="CP_ORDEN_COMPRA_DETALLE" Relationship="SAVModelPrueba.FK_CP_ORDEN_COMPRA_DETALLE_CP_ORDEN_COMPRA" FromRole="CP_ORDEN_COMPRA" ToRole="CP_ORDEN_COMPRA_DETALLE" />
+        </EntityType>
+        <EntityType Name="CP_ORDEN_COMPRA_DETALLE">
+          <Key>
+            <PropertyRef Name="numero" />
+            <PropertyRef Name="linea" />
+          </Key>
+          <Property Name="numero" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <Property Name="linea" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <Property Name="cantidad" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="id_producto" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="costo_unitario" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="subtotal" Type="Decimal" Precision="4" Scale="2" />
+          <NavigationProperty Name="CP_ORDEN_COMPRA" Relationship="SAVModelPrueba.FK_CP_ORDEN_COMPRA_DETALLE_CP_ORDEN_COMPRA" FromRole="CP_ORDEN_COMPRA_DETALLE" ToRole="CP_ORDEN_COMPRA" />
+        </EntityType>
+        <Association Name="FK_CP_CABECERA_COTIZACION_CP_ESTADO">
+          <End Role="CP_ESTADO" Type="SAVModelPrueba.CP_ESTADO" Multiplicity="0..1" />
+          <End Role="CP_CABECERA_COTIZACION" Type="SAVModelPrueba.CP_CABECERA_COTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CP_ESTADO">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="CP_CABECERA_COTIZACION">
+              <PropertyRef Name="cod_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CP_COTIZACION_X_PEDIDO_CP_CABECERA_COTIZACION">
+          <End Role="CP_CABECERA_COTIZACION" Type="SAVModelPrueba.CP_CABECERA_COTIZACION" Multiplicity="1" />
+          <End Role="CP_COTIZACION_X_PEDIDO" Type="SAVModelPrueba.CP_COTIZACION_X_PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CP_CABECERA_COTIZACION">
+              <PropertyRef Name="numero" />
+            </Principal>
+            <Dependent Role="CP_COTIZACION_X_PEDIDO">
+              <PropertyRef Name="numero_cotizacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CP_DETALLE_COTIZACION_CP_CABECERA_COTIZACION">
+          <End Role="CP_CABECERA_COTIZACION" Type="SAVModelPrueba.CP_CABECERA_COTIZACION" Multiplicity="1" />
+          <End Role="CP_DETALLE_COTIZACION" Type="SAVModelPrueba.CP_DETALLE_COTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CP_CABECERA_COTIZACION">
+              <PropertyRef Name="numero" />
+            </Principal>
+            <Dependent Role="CP_DETALLE_COTIZACION">
+              <PropertyRef Name="numero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CP_ORDEN_COMPRA_CP_CABECERA_COTIZACION">
+          <End Role="CP_CABECERA_COTIZACION" Type="SAVModelPrueba.CP_CABECERA_COTIZACION" Multiplicity="0..1" />
+          <End Role="CP_ORDEN_COMPRA" Type="SAVModelPrueba.CP_ORDEN_COMPRA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CP_CABECERA_COTIZACION">
+              <PropertyRef Name="numero" />
+            </Principal>
+            <Dependent Role="CP_ORDEN_COMPRA">
+              <PropertyRef Name="numero_cotizacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CP_DETALLE_DESPACHO_CP_CABECERA_DESPACHO">
+          <End Role="CP_CABECERA_DESPACHO" Type="SAVModelPrueba.CP_CABECERA_DESPACHO" Multiplicity="1" />
+          <End Role="CP_DETALLE_DESPACHO" Type="SAVModelPrueba.CP_DETALLE_DESPACHO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CP_CABECERA_DESPACHO">
+              <PropertyRef Name="numero" />
+            </Principal>
+            <Dependent Role="CP_DETALLE_DESPACHO">
+              <PropertyRef Name="numero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CP_COTIZACION_X_PEDIDO_CP_CABECERA_PEDIDO">
+          <End Role="CP_CABECERA_PEDIDO" Type="SAVModelPrueba.CP_CABECERA_PEDIDO" Multiplicity="1" />
+          <End Role="CP_COTIZACION_X_PEDIDO" Type="SAVModelPrueba.CP_COTIZACION_X_PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CP_CABECERA_PEDIDO">
+              <PropertyRef Name="numero" />
+            </Principal>
+            <Dependent Role="CP_COTIZACION_X_PEDIDO">
+              <PropertyRef Name="numero_pedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CP_DETALLE_PEDIDO_CP_CABECERA_PEDIDO">
+          <End Role="CP_CABECERA_PEDIDO" Type="SAVModelPrueba.CP_CABECERA_PEDIDO" Multiplicity="1" />
+          <End Role="CP_DETALLE_PEDIDO" Type="SAVModelPrueba.CP_DETALLE_PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CP_CABECERA_PEDIDO">
+              <PropertyRef Name="numero" />
+            </Principal>
+            <Dependent Role="CP_DETALLE_PEDIDO">
+              <PropertyRef Name="numero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CP_ORDEN_COMPRA_DETALLE_CP_ORDEN_COMPRA">
+          <End Role="CP_ORDEN_COMPRA" Type="SAVModelPrueba.CP_ORDEN_COMPRA" Multiplicity="1" />
+          <End Role="CP_ORDEN_COMPRA_DETALLE" Type="SAVModelPrueba.CP_ORDEN_COMPRA_DETALLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CP_ORDEN_COMPRA">
+              <PropertyRef Name="numero" />
+            </Principal>
+            <Dependent Role="CP_ORDEN_COMPRA_DETALLE">
+              <PropertyRef Name="numero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SAVModelPruebaStoreContainer" CdmEntityContainer="SAVEntities1">
+          <EntitySetMapping Name="CP_CABECERA_COTIZACION">
+            <EntityTypeMapping TypeName="SAVModelPrueba.CP_CABECERA_COTIZACION">
+              <MappingFragment StoreEntitySet="CP_CABECERA_COTIZACION">
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="id_provedor" ColumnName="id_provedor" />
+                <ScalarProperty Name="id_user_aprovacion" ColumnName="id_user_aprovacion" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="cod_estado" ColumnName="cod_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CP_CABECERA_DESPACHO">
+            <EntityTypeMapping TypeName="SAVModelPrueba.CP_CABECERA_DESPACHO">
+              <MappingFragment StoreEntitySet="CP_CABECERA_DESPACHO">
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="fecha_despacho" ColumnName="fecha_despacho" />
+                <ScalarProperty Name="fecha_entrega" ColumnName="fecha_entrega" />
+                <ScalarProperty Name="numero_orden_compra" ColumnName="numero_orden_compra" />
+                <ScalarProperty Name="id_proveedor" ColumnName="id_proveedor" />
+                <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CP_CABECERA_PEDIDO">
+            <EntityTypeMapping TypeName="SAVModelPrueba.CP_CABECERA_PEDIDO">
+              <MappingFragment StoreEntitySet="CP_CABECERA_PEDIDO">
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="id_responsable" ColumnName="id_responsable" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CP_COTIZACION_X_PEDIDO">
+            <EntityTypeMapping TypeName="SAVModelPrueba.CP_COTIZACION_X_PEDIDO">
+              <MappingFragment StoreEntitySet="CP_COTIZACION_X_PEDIDO">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="numero_pedido" ColumnName="numero_pedido" />
+                <ScalarProperty Name="numero_cotizacion" ColumnName="numero_cotizacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CP_DETALLE_COTIZACION">
+            <EntityTypeMapping TypeName="SAVModelPrueba.CP_DETALLE_COTIZACION">
+              <MappingFragment StoreEntitySet="CP_DETALLE_COTIZACION">
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="linea" ColumnName="linea" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="costo_unitario" ColumnName="costo_unitario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CP_DETALLE_DESPACHO">
+            <EntityTypeMapping TypeName="SAVModelPrueba.CP_DETALLE_DESPACHO">
+              <MappingFragment StoreEntitySet="CP_DETALLE_DESPACHO">
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="linea" ColumnName="linea" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CP_DETALLE_PEDIDO">
+            <EntityTypeMapping TypeName="SAVModelPrueba.CP_DETALLE_PEDIDO">
+              <MappingFragment StoreEntitySet="CP_DETALLE_PEDIDO">
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="linea" ColumnName="linea" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="costo_unitario" ColumnName="costo_unitario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CP_ESTADO">
+            <EntityTypeMapping TypeName="SAVModelPrueba.CP_ESTADO">
+              <MappingFragment StoreEntitySet="CP_ESTADO">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CP_M_PROVEEDOR">
+            <EntityTypeMapping TypeName="SAVModelPrueba.CP_M_PROVEEDOR">
+              <MappingFragment StoreEntitySet="CP_M_PROVEEDOR">
+                <ScalarProperty Name="Codigo_Proveedor" ColumnName="Codigo_Proveedor" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+                <ScalarProperty Name="responsable_legal" ColumnName="responsable_legal" />
+                <ScalarProperty Name="contabilidad" ColumnName="contabilidad" />
+                <ScalarProperty Name="ruc" ColumnName="ruc" />
+                <ScalarProperty Name="cedula_pass" ColumnName="cedula_pass" />
+                <ScalarProperty Name="id_tipo_producto" ColumnName="id_tipo_producto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CP_ORDEN_COMPRA">
+            <EntityTypeMapping TypeName="SAVModelPrueba.CP_ORDEN_COMPRA">
+              <MappingFragment StoreEntitySet="CP_ORDEN_COMPRA">
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="fecha_generacion" ColumnName="fecha_generacion" />
+                <ScalarProperty Name="fecha_entrega" ColumnName="fecha_entrega" />
+                <ScalarProperty Name="id_responsable" ColumnName="id_responsable" />
+                <ScalarProperty Name="fecha_aprovacion" ColumnName="fecha_aprovacion" />
+                <ScalarProperty Name="numero_cotizacion" ColumnName="numero_cotizacion" />
+                <ScalarProperty Name="subtoral" ColumnName="subtoral" />
+                <ScalarProperty Name="iva" ColumnName="iva" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CP_ORDEN_COMPRA_DETALLE">
+            <EntityTypeMapping TypeName="SAVModelPrueba.CP_ORDEN_COMPRA_DETALLE">
+              <MappingFragment StoreEntitySet="CP_ORDEN_COMPRA_DETALLE">
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="linea" ColumnName="linea" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="costo_unitario" ColumnName="costo_unitario" />
+                <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
